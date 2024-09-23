@@ -1,0 +1,64 @@
+### Регистрация пользователя
+POST /api/user/registration HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json; charset=utf-8
+
+{
+    "email": "userEmail@gmail.com",
+    "password": "userPass"
+}
+
+
+### Логирование пользователя ( Аутентификация или вход )
+POST /api/user/login HTTP/1.1
+Host: localhost:3000
+Content-type: application/json; charset=utf-8
+
+{
+    "email": "UpdatedUserEmail@gmail.com",
+    "password": "UpdatedUserPass"
+ 
+}
+
+
+### Список всех пользователей 
+GET /api/user/getall HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ1c2VyRW1haWxAZ21haWwuY29tIiwicm9sZSI6IlVTRVIiLCJpYXQiOjE3MTQyMDgzMDMsImV4cCI6MTcxNDI5NDcwM30.vPUS5yKDmv7Acn_aW8egLjUCPccb7DT1NqlCEDMKvOk
+
+
+### Получить одного пользователя     
+GET /api/user/getone/1 HTTP/1.1
+Host: localhost:3000
+// Authorization: Bearer
+
+
+### Создать пользователя
+POST /api/user/create HTTP/1.1
+Host: localhost:3000
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZW1haWwiOiJpdHNGaXJzdExhc3RFbWFpbEBnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTcxMjIzNzQyMSwiZXhwIjoxNzEyMzIzODIxfQ.8WP-ni73Y9X9-QhVXT6UWXcnQb3BeOFPogvC9nGapSs
+Content-type: application/json; charset=utf-8
+
+{
+    "email": "Admin@mail.ru",
+    "password": "qwertyAdmin",
+    "role": "ADMIN"
+}
+
+
+### Обновить пользователя    
+PUT /api/user/update/1 HTTP/1.1
+Host: localhost:3000
+//Authorization: Bearer
+Content-Type: application/json; charset=utf-8
+
+{
+    "email": "UpdatedUserEmail@gmail.com",
+    "password": "UpdatedUserPass"
+}
+
+
+### Удалить пользователя   
+DELETE /api/user/delete/1 HTTP/1.1
+Host: localhost:3000
+//Authorization: Bearer

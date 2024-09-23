@@ -1,0 +1,31 @@
+### Список всех свойств товара 
+GET /api/device/3/property/getall HTTP/1.1
+Host: localhost:3000
+
+### Получить одно свойство товара 
+GET /api/device/3/property/getone/5 HTTP/1.1
+Host: localhost:3000
+
+### Создать новое свойство товара 
+POST /api/device/3/property/create HTTP/1.1
+Host: localhost:3000
+Content-type: application/json; charset=utf-8
+
+{
+    "name": "Новое св-во товара",
+    "value": "Описание св-ва товара"
+}
+
+### Обновить свойство товара 
+PUT /api/device/3/property/update/7 HTTP/1.1
+Host: localhost:3000
+Content-type: application/json; charset=utf-8
+
+{
+    "name": "Обновленное св-во товара",
+    "value": "Обновленное описание св-ва товара"
+}
+
+### Удалить свойство товара 
+DELETE  /api/device/3/property/delete/7 HTTP/1.1
+Host: localhost:3000

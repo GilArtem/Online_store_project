@@ -1,0 +1,88 @@
+### Получить все товары
+GET /api/device/getall?limit=100&page=1 HTTP/1.1
+Host: localhost:3000
+
+
+### Получить один товар  
+GET /api/device/getone/2 HTTP/1.1
+Host: localhost:3000
+
+
+### Cоздание товара, у которого есть свойства 
+POST /api/device/create HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer
+Content-Type: multipart/form-data; boundary=MultiPartFormDataBoundary
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="name"
+Content-Type: text/plain; charset=utf-8
+
+IPhone 13 
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="price"
+Content-Type: text/plain; charset=utf-8
+
+111111111
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="typeId"
+
+2
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="brandId"
+
+3
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="props"
+Content-type: text/plain; charset=utf-8
+
+[{"name": "Камера", "value": "Да как и на прошлой модели"}, {"name": "Аккамулятор", "value": "Минимум 2 раза в день заряжать будешь"}]
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="image"; filename="1_photo.jpg"
+Content-Type: image/jpeg
+
+< ./1_photo.jpg 
+--MultiPartFormDataBoundary--
+
+
+### Обновить товар  
+PUT /api/device/update/2 HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer
+Content-Type: multipart/form-data; boundary=Boundary
+
+--Boundary
+Content-Disposition: form-data; name="name"
+
+Тестовый товар2 (обновление please!!)
+--Boundary
+Content-Disposition: form-data; name="price"
+
+100000
+--Boundary
+Content-Disposition: form-data; name="typeId"
+
+2
+--Boundary
+Content-Disposition: form-data; name="brandId"
+
+2
+--Boundary
+Content-Disposition: form-data; name="image"; filename="2_photo.jpg"
+Content-Type: image/jpeg
+
+< ./2_photo.jpg
+
+--Boundary
+Content-Disposition: form-data; name="props"
+
+[{"name": "Первый заголовок", "value": "Описание первого заголовка"}, {"name": "Второй заголовок", "value": "Описание второго заголовка"}]
+--Boundary--
+
+
+### Удалить товар
+DELETE /api/device/delete/ HTTP/1.1
+Host: localhost:3000
+Authorization: Bearer
